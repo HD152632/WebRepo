@@ -1,0 +1,16 @@
+@CHARSET "EUC-KR";
+
+#title{
+	text-align:center;
+	font-weight:bold;
+}
+
+#author{
+	text-align:right;
+	font-weight:normal;
+}
+
+#content{
+	text-align:center;
+	font-weight:normal;
+}
