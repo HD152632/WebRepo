@@ -15,12 +15,11 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/hello")
 public class HelloServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     /**
-     * @see HttpServlet#HttpServlet()
+     * Default constructor. 
      */
     public HelloServlet() {
-        super();
         // TODO Auto-generated constructor stub
     }
 
@@ -29,20 +28,29 @@ public class HelloServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
+//		response.getWriter().append("Served at: ").append(request.getContextPath());
+	
+		// 입력 데이터 처리
+		request.setCharacterEncoding("utf-8");
 		
+		String id = request.getParameter("id");
+		String name = request.getParameter("name");
+		
+		// 출력데이터 Content Tpye 설정
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		
 		out.println("<!DOCTYPE html>");
 		out.println("<html>");
 		out.println("<head>");
-		out.println("<title>Servlet Test</title>");
+		out.println("<title>Servlet Text</title>");
 		out.println("</head>");
 		out.println("<body>");
-		out.println("<h1>Hello, Servlet 안녕</h1>");
+		out.println("<h1>Hello, Servlet</h1>");
+		out.println("<h1>안녕, 서블릿</h1>");
+		out.println("<h2>id : " + id + ", name : " + name + "</h2>");
 		out.println("</body>");
-		out.println("</html>");
+		out.println("</html");
 	}
 
 	/**
@@ -50,20 +58,28 @@ public class HelloServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("do post 호출됨");
+		System.out.println("doPost() 호출됨");
 		doGet(request, response);
 	}
 	
 	@Override
-	public void init() throws ServletException{
-		super.init();
-		
+	public void init() throws ServletException {
+		// 최초 메모리 로딩시에 1회 호출
+		System.out.println("init() 호출");
+	}
+
+	@Override
+	protected void service(HttpServletRequest arg0, HttpServletResponse arg1) throws ServletException, IOException {
+		System.out.println("service() 호출");
+		super.service(arg0, arg1);
 	}
 	
 	@Override
-	protected void service(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException{
-		System.out.println("service 호출");
-		super.service(req, resp);
+	public void destroy() {
+		// 메모리에서 해제 시 호출됨
+		// 서버를 중지시키거나, 소스가 변경된 경우
+		System.out.println("destroy() 호출");
 	}
+	 
 
 }

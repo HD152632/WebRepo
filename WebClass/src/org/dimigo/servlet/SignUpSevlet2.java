@@ -1,6 +1,7 @@
 package org.dimigo.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -8,19 +9,20 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+
+import org.json.simple.JSONObject;
 
 /**
- * Servlet implementation class SessionServlet
+ * Servlet implementation class SignUpSevlet
  */
-@WebServlet("/session")
-public class SessionServlet extends HttpServlet {
+@WebServlet("/signup2")
+public class SignUpSevlet2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SessionServlet() {
+    public SignUpSevlet2() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,20 +32,8 @@ public class SessionServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		// 세선에 사용자 정보가 없으면 login.jsp로 포워딩
-		// 만약에 있으면 sessionInfo.jsp로 포워딩
-		// sessionInfo.jsp에서는 세션에 담긴 사용자정보 (id, name, nickname) 출력
-		HttpSession session = request.getSession();
-		if(session.getAttribute("user") == null){
-			// response.sendRedirect("jsp/login.jsp");
-			RequestDispatcher rd = request.getRequestDispatcher("jsp/login.jsp");
-			rd.forward(request, response);
-		}
-		else{
-			RequestDispatcher rd = request.getRequestDispatcher("jsp/sessionInfo.jsp");
-			rd.forward(request, response);
-		}
-		
+		RequestDispatcher rd = request.getRequestDispatcher("jsp/signup2.jsp");
+		rd.forward(request, response);
 	}
 
 	/**
@@ -51,7 +41,21 @@ public class SessionServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		
+		response.setContentType("application/json;charset=utf-8");
+		PrintWriter out = response.getWriter();
+		
+		request.setCharacterEncoding("utf-8");
+		String id = request.getParameter("id");
+		String pwd = request.getParameter("pwd");
+		String name = request.getParameter("name");
+		String nickname = request.getParameter("nickname");
+		System.out.println(id + " " + pwd + " " + name + " " + nickname);
+		
+		// id, pwd 사용자 인증 체크
+		boolean result = true;
+		
+		out.print(result);
+		out.close();
 	}
-
 }
