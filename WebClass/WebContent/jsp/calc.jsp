@@ -1,4 +1,3 @@
-<%@page import="java.text.SimpleDateFormat"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.text.SimpleDateFormat, java.util.Date" %>
@@ -10,26 +9,25 @@
 </head>
 <body>
 <form>
-<input type="number" name="num" min="1" required>
+<input type="number" name="num" required>
 <button type="submit">계산</button>
 </form>
-<% 
-	//java code 작성
-	String n = request.getParameter("num");
-	int num;
-	if(n!=null){
-		num=Integer.valueOf(n);
-		num=num*(num+1)/2;
+<%! private String num; %>
+<%
+	num = request.getParameter("num");
+	int sum=0;
+	if(num != null){
+		Integer n = new Integer(num);
+		for(int i=1;i<=n;i++){
+			sum += i;
+		}
 %>
-
-<h1>1 ~ <%=n %>까지의 합은 <%=num %>입니다. </h1>
-
-<% 
+<h1>1 ~ <%=num%>까지의 합은 <%=sum%>입니다. </h1>
+<%
 	}
-	
-	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss a");
+	// 현재 일시 구하기
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 %>
-현재 일시는 <%=sdf.format(new Date()) %>
-
+현재 일시는 <%= sdf.format(new Date()) %>
 </body>
 </html>
