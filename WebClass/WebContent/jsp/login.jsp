@@ -42,7 +42,7 @@
 		myModal.find('.modal-body').text('Invalid username or password');
 		myModal.modal();
 		
-		document.getElementById("id").innerHTML=request.getAttribute("id");
+		document.getElementById("inputEmail").innerHTML=session.getAttribute("id");
 	<%}%>
 </script>
 
