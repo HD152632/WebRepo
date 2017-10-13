@@ -56,9 +56,7 @@ public class LoginServlet extends HttpServlet {
 		
 		// id, pwd 사용자 인증 체크
 		
-		boolean result=false;
-		
-		if(id.equals("test@naver.com")){}
+		boolean result=true;
 		
 		if(result){
 			// 세션에 사용자 정보를 생성하여 담기
