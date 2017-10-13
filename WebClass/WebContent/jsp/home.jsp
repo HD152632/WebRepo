@@ -42,7 +42,7 @@ function menu_out(e) {
     	UserVO user = (UserVO) session.getAttribute("user");
     	if(user == null){
     %>
-    	<a class="text-bold text-white" style="text-decoration: none" href="/WebClass/bloglogin">Sign in</a>
+    	<a class="text-bold text-white" style="text-decoration: none" href="/WebClass/login">Sign in</a>
     	<span class="text-bold text-white">&nbsp; or &nbsp;</span>
     	<a class="text-bold text-white" style="text-decoration: none" href="/WebClass/signup">Sign up</a>
     	<%} else {%>
@@ -57,8 +57,8 @@ function menu_out(e) {
 	      	<button type="submit" class="dropdown-item">Sign out</button>
 	      </form>
 	       	<div class="dropdown-divider"></div>
-	        <button type="button" class="dropdown-item">Action1</button>
-	        <button type="button" class="dropdown-item">Action2</button>
+	        <button type="button" class="dropdown-item">b1</button>
+	        <button type="button" class="dropdown-item">b2</button>
 	      </div>
 	    </li>
 	    </ul>
