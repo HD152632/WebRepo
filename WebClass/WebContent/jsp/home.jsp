@@ -42,7 +42,7 @@ function menu_out(e) {
     	UserVO user = (UserVO) session.getAttribute("user");
     	if(user == null){
     %>
-    	<a class="text-bold text-white" style="text-decoration: none" href="/WebClass/login">Sign in</a>
+    	<a class="text-bold text-white" style="text-decoration: none" href="/WebClass/bloglogin">Sign in</a>
     	<span class="text-bold text-white">&nbsp; or &nbsp;</span>
     	<a class="text-bold text-white" style="text-decoration: none" href="/WebClass/signup">Sign up</a>
     	<%} else {%>
