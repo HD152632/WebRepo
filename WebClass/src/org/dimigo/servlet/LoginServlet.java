@@ -55,7 +55,10 @@ public class LoginServlet extends HttpServlet {
 		System.out.println(id + " " + pwd);
 		
 		// id, pwd 사용자 인증 체크
-		boolean result = true;
+		
+		boolean result=false;
+		
+		if(id.equals("test@naver.com")){}
 		
 		if(result){
 			// 세션에 사용자 정보를 생성하여 담기
@@ -63,8 +66,8 @@ public class LoginServlet extends HttpServlet {
 			
 			UserVO user = new UserVO();
 			user.setId(id);
-			user.setName("홍길동");
-			user.setNickname("의적 ");
+			user.setName("admin");
+			user.setNickname("none ");
 			session.setAttribute("user", user);
 			
 			RequestDispatcher rd = request.getRequestDispatcher("jsp/home.jsp");
