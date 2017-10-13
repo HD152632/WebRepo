@@ -12,7 +12,7 @@
 <body>
 <div class="container">
 
-  <form class="form-signin" action="/WebClass/login" method="post">
+  <form class="form-signin" action="/WebClass/login" method="post" onsubmit='return formsubmit();'>
     <h2 class="form-signin-heading">Please sign in</h2>
     
     <label for="inputEmail" class="sr-only">Email address</label>
@@ -21,7 +21,7 @@
     <label for="inputPassword" class="sr-only">Password</label>
     <input type="password" name="pwd" id="inputPassword" class="form-control" placeholder="Password" required>
 
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    <button class="btn btn-lg btn-primary btn-block" type="submit" >Sign in</button>
   </form>
 
 </div>
@@ -34,6 +34,20 @@
 
 <script>
 	<%-- 로그인이 실패한 경우 처리 추가 --%>
+	function formsubmit(){
+		if(document.getElementById("inputEmail").value=="test@naver.com"){
+			return true;
+		}
+		else{
+			var myModal = $('#myModal');
+			myModal.find('.modal-title').text('Login Error');
+			myModal.find('.modal-body').text('Invalid username or password');
+			myModal.modal();
+			
+			return false;
+		}
+	}
+	
 	<%
 		if("error".equals(request.getAttribute("msg"))){
 	%>
