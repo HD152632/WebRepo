@@ -35,7 +35,7 @@
 <script>
 	<%-- 로그인이 실패한 경우 처리 추가 --%>
 	function formsubmit(){
-		if(document.getElementById("inputEmail").value=="test@naver.com"){
+		if(document.getElementById("inputEmail").value=='test@naver.com'){
 			return true;
 		}
 		else{
@@ -43,6 +43,7 @@
 			myModal.find('.modal-title').text('Login Error');
 			myModal.find('.modal-body').text('Invalid username or password');
 			myModal.modal();
+
 			
 			return false;
 		}
