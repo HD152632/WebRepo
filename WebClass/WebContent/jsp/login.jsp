@@ -43,22 +43,9 @@
 			myModal.find('.modal-title').text('Login Error');
 			myModal.find('.modal-body').text('Invalid username or password');
 			myModal.modal();
-
-			
 			return false;
 		}
 	}
-	
-	<%
-		if("error".equals(request.getAttribute("msg"))){
-	%>
-		var myModal = $('#myModal');
-		myModal.find('.modal-title').text('Login Error');
-		myModal.find('.modal-body').text('Invalid username or password');
-		myModal.modal();
-		
-		document.getElementById("inputEmail").innerHTML=session.getAttribute("id");
-	<%}%>
 </script>
 
 </body>

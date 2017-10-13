@@ -72,14 +72,6 @@ public class LoginServlet extends HttpServlet {
 			
 			RequestDispatcher rd = request.getRequestDispatcher("jsp/home.jsp");
 			rd.forward(request, response);
-		} else{
-			HttpSession session = request.getSession();
-			
-			request.setAttribute("msg", "error");
-			session.setAttribute("id", id);
-			session.setAttribute("pwd", pwd);
-			RequestDispatcher rd = request.getRequestDispatcher("jsp/login.jsp");
-			rd.forward(request, response);
 		}
 		
 		out.close();
