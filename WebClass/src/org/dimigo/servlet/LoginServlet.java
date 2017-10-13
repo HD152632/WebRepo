@@ -67,13 +67,15 @@ public class LoginServlet extends HttpServlet {
 			UserVO user = new UserVO();
 			user.setId(id);
 			user.setName("admin");
-			user.setNickname("none ");
+			user.setNickname("none");
 			session.setAttribute("user", user);
 			
 			RequestDispatcher rd = request.getRequestDispatcher("jsp/home.jsp");
 			rd.forward(request, response);
 		} else{
 			request.setAttribute("msg", "error");
+			request.setAttribute("id", id);
+			request.setAttribute("pwd", pwd);
 			RequestDispatcher rd = request.getRequestDispatcher("jsp/login.jsp");
 			rd.forward(request, response);
 		}

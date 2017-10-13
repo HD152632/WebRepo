@@ -41,6 +41,8 @@
 		myModal.find('.modal-title').text('Login Error');
 		myModal.find('.modal-body').text('Invalid username or password');
 		myModal.modal();
+		
+		document.getElementById("id").innerHTML=request.getAttribute("id");
 	<%}%>
 </script>
 
