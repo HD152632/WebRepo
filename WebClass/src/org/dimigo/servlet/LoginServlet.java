@@ -68,7 +68,7 @@ public class LoginServlet extends HttpServlet {
 			user.setNickname("none");
 			session.setAttribute("user", user);
 			
-			RequestDispatcher rd = request.getRequestDispatcher("myblog/blog.html");
+			RequestDispatcher rd = request.getRequestDispatcher("myblog/blog.jsp");
 			rd.forward(request, response);
 		}
 		

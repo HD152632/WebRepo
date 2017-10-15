@@ -42,7 +42,7 @@ public class logoutServlet extends HttpServlet {
 //		session.removeAttribute("user");
 		session.invalidate();
 		
-		RequestDispatcher rd = request.getRequestDispatcher("html/blog.html");
+		RequestDispatcher rd = request.getRequestDispatcher("myblog/blog.jsp");
 		rd.forward(request, response);
 	}
 
