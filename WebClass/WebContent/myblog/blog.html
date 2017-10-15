@@ -22,6 +22,7 @@
         e.setAttribute("class","nav-item");            // li calss="nav-item"
      }
      
+     
      </script>
      <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
@@ -49,7 +50,7 @@
     </ul>
     <form class="form-inline my-2 my-lg-0" id="loginForm">
     	<p id="name"/>	
-      <input type="button" value="login" class="btn btn-outline-success my-2 my-sm-0" onClick="location.href='/WebClass/jsp/login.jsp';">
+      <input type="button" value="login" id="btnloginout" class="btn btn-outline-success my-2 my-sm-0" onClick="location.href='/WebClass/jsp/login.jsp';">
     </form>
   </div>
 </nav>
@@ -81,5 +82,17 @@
          </div>
       </div>
    </div>
+   
+   <script>
+   		UserVO user = (UserVO) session.getAttribute("user");
+   		if(user=="null"){
+   			document.getElementById("btnloginout").innerHTML="login";
+   			document.getElementById("name").innerHTML="";
+   		}
+   		else{
+   			document.getElementById("btnloginout").innerHTML="logout";
+   			document.getElementById("name").innerHTML="tester";
+   		}
+   </script>
   </body>
  </html>
