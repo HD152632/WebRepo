@@ -88,15 +88,15 @@
    function loader(){
    		UserVO user = (UserVO) session.getAttribute("user");
    		
-   		if(user=="null"){
-   			document.getElementById("btnloginout").innerHTML='login';
-   			document.getElementById("name").innerHTML='';
-   			document.getElementById("btnloginout").onClick="location.href='/WebClass/jsp/login.jsp';";
+   		if(user==null){
+   			document.getElementById('btnloginout').innerHTML='login';
+   			document.getElementById('name').innerHTML='';
+   			document.getElementById('btnloginout').onClick="location.href='/WebClass/jsp/login.jsp';";
    		}
    		else{
-   			document.getElementById("btnloginout").innerHTML='logout';
-   			document.getElementById("name").innerHTML='tester';
-   			document.getElementById("btnloginout").onClick="location.href='/WebClass/logoutServlet.java';"
+   			document.getElementById('btnloginout').innerHTML='logout';
+   			document.getElementById('name').innerHTML='tester';
+   			document.getElementById('btnloginout').onClick="location.href='/WebClass/logoutServlet.java';"
    		}
    }
    </script>
