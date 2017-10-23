@@ -13,7 +13,6 @@
 <button type="submit">send</button>
 </form>
 
-<form>
 <h1>id: <%= request.getParameter("id") %></h1>
 <h1>pwd: <%= request.getParameter("pwd") %></h1>
 <h1>request: <%= request.getAttribute("key") %></h1>
