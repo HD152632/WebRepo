@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+<h1>scope2</h1>
 <form action="/WebClass/scope" method="post">
 <input type="text" name="id">
 <input type="hidden" name="pwd" value="test">
@@ -21,7 +23,7 @@
 <h1>application: <%= application.getAttribute("key") %></h1>
 
 <form action="/WebClass/jsp/scope2.jsp" method="post">
-<button type="submit">send</button>
+
 </form>
 
 </body>
