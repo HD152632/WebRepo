@@ -19,6 +19,12 @@
 <h1>session: <%= session.getAttribute("key") %></h1>
 <h1>application: <%= application.getAttribute("key") %></h1>
 
+<h1>id: ${ param.id }</h1>
+<h1>pwd: ${ param.pwd }</h1>
+<h1>request: ${ key }</h1>
+<h1>session: ${ sessionScope.key }</h1>
+<h1>application: ${ applicationScope.key }</h1>
+
 <form action="/WebClass/jsp/scope2.jsp" method="post">
 <button type="submit">send</button>
 </form>
