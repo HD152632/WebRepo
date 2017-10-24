@@ -23,5 +23,16 @@
 <button type="submit">send</button>
 </form>
 
+<script>
+<%
+	String error = (String)request.getAttribute("error");
+	if(error != null){
+%>
+		alert('<%= error %>');		
+<%
+	}
+%>
+</script>
+
 </body>
 </html>
