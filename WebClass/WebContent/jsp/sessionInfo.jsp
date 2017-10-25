@@ -11,8 +11,8 @@
 <%
 	UserVO user = (UserVO) session.getAttribute("user");
 %>
-<h1>id : <%=user.getId()%></h1>
-<h1>name : <%=user.getName()%></h1>
-<h1>nickname : <%=user.getNickname()%></h1>
+<h1>id :${ user.id }</h1>
+<h1>name : ${user.name }</h1>
+<h1>nickname : ${user.nickname }</h1>
 </html>
 </body>
