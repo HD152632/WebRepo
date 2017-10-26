@@ -4,7 +4,7 @@
 	<li class="nav-item" onmouseover="menu_over(this);"
 		onmouseout="menu_out(this)"><a class="nav-link" href="/WebClass/session">메뉴 1 </a></li>
 	<li class="nav-item" onmouseover="menu_over(this);"
-		onmouseout="menu_out(this)"><a class="nav-link" href="p.html">메뉴 2</a></li>
+		onmouseout="menu_out(this)"><a class="nav-link" href="/WebClass/list">메뉴 2</a></li>
 	<li class="nav-item" onmouseover="menu_over(this);"
 		onmouseout="menu_out(this)"><a class="nav-link" href="dom.html">메뉴 3</a></li>
 </ul>
