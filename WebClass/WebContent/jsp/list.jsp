@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<table>
+<table border="1">
 	<thead>
 		<tr>
 			<th>No</th>
@@ -18,7 +18,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<c:if test="${list != null} }">
+		<c:if test="${list != null}">
 			<c:forEach var="item" items="${list }" varStatus="status">
 				<tr>
 					<td>${status.count }</td>
