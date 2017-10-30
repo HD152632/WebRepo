@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<c:set var = "contextPath" value=${ pageContext.request.contextPath }/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,12 +8,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>LogIn</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-<link rel="stylesheet" href="/WebClass/css/signin.css">
+<link rel="stylesheet" href="${contextPath}/css/signin.css">
 </head>
 <body>
 <div class="container">
 
-  <form class="form-signin" action="/WebClass/bloglogin" method="post" onsubmit='return formsubmit();'>
+  <form class="form-signin" action="${contextPath}/bloglogin" method="post" onsubmit='return formsubmit();'>
     <h2 class="form-signin-heading">Please sign in</h2>
     
     <label for="inputEmail" class="sr-only">Email address</label>
