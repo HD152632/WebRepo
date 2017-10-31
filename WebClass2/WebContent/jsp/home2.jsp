@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="org.dimigo.vo.UserVO" %>
-<c:set var = "contextPath" value=${ pageContext.request.contextPath }/>
+<c:set var = "contextPath" value="${ pageContext.request.contextPath }"/>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
