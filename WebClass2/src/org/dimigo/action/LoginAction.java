@@ -61,7 +61,7 @@ public class LoginAction implements IAction{
 				user.setNickname("none");
 				session.setAttribute("user", user);
 				
-				RequestDispatcher rd = request.getRequestDispatcher("myblog/blog.jsp");
+				RequestDispatcher rd = request.getRequestDispatcher("jsp/home.jsp");
 				rd.forward(request, response);
 			} else {
 				throw new Exception("Invalid username or password");
@@ -73,7 +73,7 @@ public class LoginAction implements IAction{
 			e.printStackTrace();
 			request.setAttribute("msg", "error");
 			request.setAttribute("error", e.getMessage());
-			RequestDispatcher rd = request.getRequestDispatcher("myblog/blog.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("jsp/login.jsp");
 			rd.forward(request, response);
 			throw new Exception("Invalid username or password");
 		}
