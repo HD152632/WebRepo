@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Exception : <%= exception.getClass().getName() %></h1>
-<h1>Exception : <%= exception.getMessage() %></h1>
+<h1>${error }</h1>
+<button onclick="history.back()"></button>
 </body>
 </html>

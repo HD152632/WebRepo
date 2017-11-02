@@ -14,7 +14,7 @@
 <body>
 <div class="container">
 
-  <form class="form-signin" action="${contextPath}/bloglogin" method="post" onsubmit='return formsubmit();'>
+  <form class="form-signin" action="${contextPath}/login.do" method="post" onsubmit='return formsubmit();'>
     <h2 class="form-signin-heading">Please sign in</h2>
     
     <label for="inputEmail" class="sr-only">Email address</label>
@@ -34,21 +34,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
+<c:if test="${error != null} }">
 <script>
-	<%-- 로그인이 실패한 경우 처리 추가 --%>
-	function formsubmit(){
-		if(document.getElementById("inputEmail").value=='test@naver.com'){
-			return true;
-		}
-		else{
-			var myModal = $('#myModal');
-			myModal.find('.modal-title').text('Login Error');
-			myModal.find('.modal-body').text('Invalid username or password');
-			myModal.modal();
-			return false;
-		}
-	}
+	var myModal=$('#myModal');
+	myModal.find('.modal-body').text('${error}');
+	myModal.modal();
 </script>
+</c:if>
 
 </body>
 </html>
