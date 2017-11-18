@@ -21,6 +21,7 @@ public class UserVO {
 	private String id;
 	private String name;
 	private String nickname;
+	private String pwd;
 	
 	public UserVO(){}
 	
@@ -30,9 +31,25 @@ public class UserVO {
 		this.name = name;
 		this.nickname = nickname;
 	}
+	
+	public UserVO(String id,String pwd,String name,String nickname){
+		super();
+		this.id = id;
+		this.pwd = pwd;
+		this.name = name;
+		this.nickname = nickname;
+	}
 	/**
 	 * @return the id
 	 */
+	public String getPwd(){
+		return pwd;
+	}
+	
+	public void setPwd(String pwd){
+		this.pwd=pwd;
+	}
+	
 	public String getId() {
 		return id;
 	}

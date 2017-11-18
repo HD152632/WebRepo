@@ -18,5 +18,6 @@ import javax.servlet.http.HttpServletResponse;
  * @versio: 1.0
  */
 public interface IAction {
-	void execute(HttpServletRequest request,HttpServletResponse response)throws Exception; 
+	void execute(HttpServletRequest request,HttpServletResponse response)throws Exception;
+	
 }
