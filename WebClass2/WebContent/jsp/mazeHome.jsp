@@ -8,21 +8,15 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 </head>
 <body>
-	<label>시드: <input type="text" name="number" id="max"></label><button onclick="randomNum()">랜덤 숫자 뽑기</button><br>
-	<label>가로 길이: <input type="text" name="number" id="max"></label><br>
-	<label>세로 길이: <input type="text" name="number" id="max"></label><br>
+	<label>시드: <input type="text" name="seed" id="seed"></label><button onclick="randomNum()">랜덤 숫자 뽑기</button><br>
+	<label>가로 길이: <input type="text" name="width" id=""></label><br>
+	<label>세로 길이: <input type="text" name="height" id="max"></label><br>
 	
 	<script type="text/javascript">
 		function randomNum(){
-			if(document.getElementById("max").value==""){
-				document.getElementById("result").innerHTML="insert number";
-			}
-			else{
-				var max=document.getElementById("max").value;
-				var result = Math.floor(Math.random() * max) + 1;	
-				
-				document.getElementById("result").innerHTML="result : "+result;
-			}
+			var result = Math.floor(Math.random() * 100000000) + 0;	
+			
+			document.getElementById("result").innerHTML="result : "+result;
 		}
 	</script>
 </body>
