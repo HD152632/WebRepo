@@ -18,7 +18,7 @@
 				var max=document.getElementById("max").value;
 				var result = Math.floor(Math.random() * 1000000) + 1;	
 				
-				document.getElementById("result").innerHTML="result : "+result;
+				document.getElementById("seed").innerHTML="result : "+result;
 		}
 	</script>
 </body>
