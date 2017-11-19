@@ -9,9 +9,9 @@
 </head>
 <script type="text/javascript" src="randGen.js"></script>
 <body>
-	<label>시드: <input type="text" name="seed" id="seed"></label><button onclick="randomNum()">랜덤 숫자 뽑기</button><br>
-	<label>가로 길이: <input type="text" name="width" id="width"></label><br>
-	<label>세로 길이: <input type="text" name="height" id="height"></label><br>
+	<label>시드: <input type="text" name="number" id="seed"></label><button onclick="randomNum()">랜덤 숫자 뽑기</button><br>
+	<label>가로 길이: <input type="text" name="number" id="width"></label><br>
+	<label>세로 길이: <input type="text" name="number" id="height"></label><br>
 	
 	<script type="text/javascript">
 		function randomNum(){
