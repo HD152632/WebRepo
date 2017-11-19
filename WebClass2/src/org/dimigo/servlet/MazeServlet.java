@@ -73,7 +73,6 @@ public class MazeServlet {
 			// 세션에 사용자 정보를 생성하여 담기
 			HttpSession session = request.getSession();
 			
-			
 			session.setAttribute("maze", 0);
 			
 			RequestDispatcher rd = request.getRequestDispatcher("jsp/mazeViewer.jsp");

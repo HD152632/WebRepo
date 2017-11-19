@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 </head>
-<script type="text/javascript" src="randGen.js"></script>
+
 <body>
 	<label>시드: <input type="text" name="number" id="seed"></label><button onclick="randomNum()">랜덤 숫자 뽑기</button><br>
 	<label>가로 길이: <input type="text" name="number" id="width"></label><br>
@@ -18,7 +18,7 @@
 				var max=document.getElementById("max").value;
 				var result = Math.floor(Math.random() * 1000000) + 1;	
 				
-				document.getElementById("seed").innerHTML="result : "+result;
+				document.getElementById("seed").value=result;
 		}
 	</script>
 </body>
