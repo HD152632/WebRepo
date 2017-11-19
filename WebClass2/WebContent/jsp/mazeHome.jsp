@@ -11,7 +11,7 @@
 	function randomNum(){
 		var result = Math.floor(Math.random() * 100000000) + 0;	
 		
-		document.getElementById("result").innerHTML="result : "+result;
+		document.getElementById("seed").innerHTML="result : "+result;
 	}
 </script>
 
