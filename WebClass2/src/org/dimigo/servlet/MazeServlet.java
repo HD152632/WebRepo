@@ -32,7 +32,7 @@ import com.google.gson.JsonObject;
  * @versio: 1.0
  */
 @WebServlet("/maze")
-public class MazeServlet {
+public class MazeServlet extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 	int map[][];
 	int seed;
@@ -316,7 +316,7 @@ public class MazeServlet {
 	    return false;
 	}
 
-	void init(){
+	void baseSet(){
 	    for(int i=0;i<=sizewidth+1;i++){
 	        for(int j=0;j<=sizeheight+1;j++){
 	            if(i*j==0 || i==sizewidth+1 || j==sizeheight+1){
@@ -340,7 +340,7 @@ public class MazeServlet {
 		boolean flag=true;
 
 		while(flag){
-	        init();
+	        baseSet();
 	        flag=buildMainRoute();
 		}
 
