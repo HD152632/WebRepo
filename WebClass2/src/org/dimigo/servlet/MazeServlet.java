@@ -79,7 +79,7 @@ public class MazeServlet {
 		
 		session.setAttribute("maze", buildMaze());
 		
-		RequestDispatcher rd = request.getRequestDispatcher("jsp/mazeViewer.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/jsp/mazeViewer.jsp");
 		rd.forward(request, response);
 		
 		out.close();
