@@ -11,7 +11,7 @@
 <body>
 	
 	
-	<form id="signupForm" class="form-signin" action="/WebClass/maze">
+	<form id="signupForm" class="form-signin" action="WebClass/maze">
     <label>시드: <input type="text" name="seed" id="seed" class="form-control" required></label><br>
 	<button onclick="randomNum()">랜덤 숫자 뽑기</button><p id="rseed"></p><br>
 	<label>가로 크기 : <input type="text" name="mazewidth" id="mazewidth" class="form-control" required></label><br>
