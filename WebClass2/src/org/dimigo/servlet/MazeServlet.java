@@ -81,9 +81,6 @@ public class MazeServlet extends HttpServlet{
 	//0없음 1복도 2벽 3끝벽 7=시작 8=도착 9=메인루트 10=임시
 
 	boolean isPath(int x,int y){
-		if(x==sizewidth){
-			map[x][y]=map[x][y];
-		}
 	    if(map[x][y]==1 || map[x][y]==7 || map[x][y]==8 || map[x][y]==9 || map[x][y]==10) return true;
 	    return false;
 	}
