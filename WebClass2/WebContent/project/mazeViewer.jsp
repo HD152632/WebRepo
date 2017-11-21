@@ -30,7 +30,7 @@
 </nav>
 
 
-<p id="viewer"><%= (String)request.getAttribute("maze") %>></p>
+<p id="viewer"><%= request.getParameter("maze") %></p>
 
 <script>
 	
