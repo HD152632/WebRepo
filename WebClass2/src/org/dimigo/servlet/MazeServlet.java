@@ -158,13 +158,13 @@ public class MazeServlet extends HttpServlet{
 	}
 
 	boolean buildRoute(int px,int py,int sx,int sy){
-	    int n=rand.nextInt()%2;
+	    int n=rand.nextInt(2);
 
 	    int chk=0;
 
 	    while(true){
 	        int len;
-	        len = rand.nextInt()%7+1;
+	        len = rand.nextInt(7)+1;
 	        int side;
 
 	        if(px>=40 && py>=40){
@@ -172,7 +172,7 @@ public class MazeServlet extends HttpServlet{
 	        }
 
 	        if(n%2==0){
-	            if(sizeheight-py > 3 && rand.nextInt()%20 < 7){ side=-sx; }
+	            if(sizeheight-py > 3 && rand.nextInt(20) < 7){ side=-sx; }
 	            else side=sx;
 
 	            while(len>0){
@@ -191,7 +191,7 @@ public class MazeServlet extends HttpServlet{
 	            }
 	        }
 	        else{
-	            if(sizewidth-px > 3 && rand.nextInt()%20 < 7){ side=-sy;}
+	            if(sizewidth-px > 3 && rand.nextInt(20) < 7){ side=-sy;}
 	            else side=sy;
 
 	            while(len>0){
@@ -242,8 +242,8 @@ public class MazeServlet extends HttpServlet{
 	void buildTrapRoute(){
 	    int sx,sy;
 
-	    sx = rand.nextInt()%2;
-	    sy = rand.nextInt()%2;
+	    sx = rand.nextInt(2);
+	    sy = rand.nextInt(2);
 
 	    for(int i=(sizewidth-1)*((sx+1)%2) + 1;i<=sizewidth && i>0;i+=(sx*2)-1){
 	        for(int j=(sizeheight-1)*((sy+1)%2) + 1;j<=sizeheight && j>0;j+=(sy*2)-1){
@@ -272,17 +272,17 @@ public class MazeServlet extends HttpServlet{
 	    int px=1;
 	    int py=1;
 
-	    int n=rand.nextInt()%2;
+	    int n=rand.nextInt(2);
 
 	    int chk=0;
 
 	    while(px!=sizewidth || py!=sizeheight){
 	        int len;
-	        len = rand.nextInt()%7+1;
+	        len = rand.nextInt(7)+1;
 	        int side;
 
 	        if(n%2==0){
-	            if(sizeheight-py > 3 && rand.nextInt()%20 < 7){ side=-1; }
+	            if(sizeheight-py > 3 && rand.nextInt(20) < 7){ side=-1; }
 	            else side=1;
 
 	            while(goAble(px+side,py,px,py) && len>0){
@@ -293,7 +293,7 @@ public class MazeServlet extends HttpServlet{
 	            }
 	        }
 	        else{
-	            if(sizewidth-px > 3 && rand.nextInt()%20 < 7){ side=-1;}
+	            if(sizewidth-px > 3 && rand.nextInt(20) < 7){ side=-1;}
 	            else side=1;
 
 	            while(goAble(px,py+side,px,py) && len>0){
