@@ -346,6 +346,7 @@ public class MazeServlet extends HttpServlet{
 
 		buildTrapRoute();
 		str="";
+		map[1][1]=7;
 		for(int i=0;i <= sizeheight+1;i++){
 			for(int j=0;j<=sizewidth+1;j++){
 				switch(map[j][i]){
