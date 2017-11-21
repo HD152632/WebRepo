@@ -330,7 +330,7 @@ public class MazeServlet extends HttpServlet{
 	String buildMaze(){
 		String str;
 		
-		map=new int[sizewidth+2][sizeheight+2];
+		map=new int[1000][1000];
 		rand = new Random(seed);
 
 		boolean flag=true;
