@@ -109,7 +109,8 @@ public class MazeServlet extends HttpServlet{
 	}
 
 	boolean goAble(int x,int y,int px,int py){
-	    if(linkChecker(x,y,px,py)>0 || map[x][y]==3) return false;
+	    if(map[x][y]==3) return false;
+	    if(linkChecker(x,y,px,py)>0) return false;
 	    else return true;
 	}
 
