@@ -65,9 +65,9 @@ public class MazeServlet extends HttpServlet{
 		PrintWriter out = response.getWriter();
 		
 		request.setCharacterEncoding("utf-8");
-		int seed = Integer.parseInt(request.getParameter("seed"));
-		int sizewidth =Integer.parseInt(request.getParameter("mazewidth"));
-		int sizeheight =Integer.parseInt(request.getParameter("mazeheight"));
+		seed = Integer.parseInt(request.getParameter("seed"));
+		sizewidth =Integer.parseInt(request.getParameter("mazewidth"));
+		sizeheight =Integer.parseInt(request.getParameter("mazeheight"));
 		
 		HttpSession session = request.getSession();
 		
@@ -330,7 +330,7 @@ public class MazeServlet extends HttpServlet{
 	String buildMaze(){
 		String str;
 		
-		map=new int[1000][1000];
+		map=new int[sizewidth+2][sizeheight+2];
 		rand = new Random(seed);
 
 		boolean flag=true;
