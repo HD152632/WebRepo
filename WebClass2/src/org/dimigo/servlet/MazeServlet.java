@@ -357,9 +357,9 @@ public class MazeServlet extends HttpServlet{
 				case 8:str+="☆";
 				}
 			}
-			str+="<LF>";
+			str+="<br />";
 		}
-
+			
 	    return str;
 	}
 }
