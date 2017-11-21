@@ -69,15 +69,11 @@ public class MazeServlet extends HttpServlet{
 		int sizewidth =Integer.parseInt(request.getParameter("mazewidth"));
 		int sizeheight =Integer.parseInt(request.getParameter("mazeheight"));
 		
-		// id, pwd 사용자 인증 체크
-		
-		buildMaze();
-		
 		HttpSession session = request.getSession();
 		
 		session.setAttribute("maze", buildMaze());
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/project/mazeViewer.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("project/mazeViewer.jsp");
 		rd.forward(request, response);
 		
 		out.close();
@@ -349,10 +345,11 @@ public class MazeServlet extends HttpServlet{
 		for(int i=1;i <= sizeheight;i++){
 			for(int j=1;j<=sizewidth;j++){
 				switch(map[j][i]){
-				case 1:str+="　";
-				case 2:str+="■";
-				case 7:str+="★";
-				case 8:str+="☆";
+				case 9:
+				case 1:str+="　"; break;
+				case 2:str+="■"; break;
+				case 7:str+="★"; break;
+				case 8:str+="☆"; break;
 				}
 			}
 			str+="\n";

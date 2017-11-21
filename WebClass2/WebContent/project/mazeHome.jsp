@@ -14,7 +14,7 @@
 	
 	
 	<button onclick="randomNum()">랜덤 숫자 뽑기</button><p id="rseed"></p>
-	<form id="signupForm" class="form-signin" action="${contextPath}/maze">
+	<form id="signupForm" class="form-signin" method="post" action="${contextPath}/maze">
     <label>시드: <input type="text" name="seed" id="seed" class="form-control" required></label><br>
 	<label>가로 크기 : <input type="text" name="mazewidth" id="mazewidth" class="form-control" required></label><br>
 	<label>세로 크기 : <input type="text" name="mazeheight" id="mazeheight" class="form-control" required></label><br>
