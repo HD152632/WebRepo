@@ -344,12 +344,13 @@ public class MazeServlet extends HttpServlet{
 
 		buildTrapRoute();
 		str="";
-		for(int i=1;i <= sizeheight;i++){
-			for(int j=1;j<=sizewidth;j++){
+		for(int i=0;i <= sizeheight+1;i++){
+			for(int j=0;j<=sizewidth+1;j++){
 				switch(map[j][i]){
 				case 9:
 				case 1:str+="　"; break;
-				case 2:str+="■"; break;
+				case 3:
+				case 0:str+="■"; break;
 				case 7:str+="★"; break;
 				case 8:str+="☆";
 				}
