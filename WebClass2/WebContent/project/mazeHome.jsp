@@ -11,7 +11,15 @@
 </head>
 
 <body>
-	
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+  	<ul class="navbar-nav mr-auto">
+	<li class="nav-item" onmouseover="menu_over(this);"
+		onmouseout="menu_out(this)"><a class="nav-link" href="project/mazeHome.jsp">메뉴 1 </a></li>
+	<li class="nav-item" onmouseover="menu_over(this);"
+		onmouseout="menu_out(this)"><a class="nav-link" href="project/algorithm.jsp">메뉴 2</a></li>
+	</ul>
+    <%-- 세션에 사용자 정보가 없는 경우 --%>
+  </div>
 	
 	<button onclick="randomNum()">랜덤 숫자 뽑기</button><p id="rseed"></p>
 	<form id="signupForm" class="form-signin" method="post" action="${contextPath}/maze">
