@@ -350,11 +350,11 @@ public class MazeServlet extends HttpServlet{
 			for(int j=0;j<=sizewidth+1;j++){
 				switch(map[j][i]){
 				case 9:
-				case 1:str+="　"; break;
+				case 1:str+="□"; break;
 				case 3:
 				case 0:str+="■"; break;
 				case 7:str+="★"; break;
-				case 8:str+="☆";
+				case 8:str+="☆"; break;
 				}
 			}
 			str+="<br />";
