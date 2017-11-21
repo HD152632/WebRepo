@@ -71,7 +71,9 @@ public class MazeServlet extends HttpServlet{
 		
 		HttpSession session = request.getSession();
 		
-		session.setAttribute("maze", buildMaze());
+		String s=buildMaze();
+		session.setAttribute("maze", s);
+		request.setAttribute("maze", s);
 		
 		RequestDispatcher rd = request.getRequestDispatcher("project/mazeViewer.jsp");
 		rd.forward(request, response);
