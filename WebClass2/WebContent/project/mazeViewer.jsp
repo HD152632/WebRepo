@@ -28,8 +28,12 @@
     <%-- 세션에 사용자 정보가 없는 경우 --%>
   </div>
 </nav>
-<h1><%= request.getParameter("maze") %></h1>
 
 
+<p id="viewer"></p>
+
+<script>
+	
+</script>
 </body>
 </html>
