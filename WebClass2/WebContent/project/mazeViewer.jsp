@@ -26,7 +26,7 @@
 
 
 <p id="viewer"><%= request.getAttribute("maze") %></p>
-
+<h1 id="seed"><%=request.getAttribute("seed") %></h1><h1 id="mazewidth"><%=request.getAttribute("sizewidth") %></h1><h1 id="mazeheight"><%=request.getAttribute("sizeheight") %></h1>
 
 </body>
 </html>

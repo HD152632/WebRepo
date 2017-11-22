@@ -74,6 +74,9 @@ public class MazeAnswerServlet extends HttpServlet{
 		String s=buildMaze();
 		session.setAttribute("maze", s);
 		request.setAttribute("maze", s);
+		request.setAttribute("seed", seed);
+		request.setAttribute("sizewidth", sizewidth);
+		request.setAttribute("sizeheight", sizeheight);
 		
 		RequestDispatcher rd = request.getRequestDispatcher("project/answerViewer.jsp");
 		rd.forward(request, response);
