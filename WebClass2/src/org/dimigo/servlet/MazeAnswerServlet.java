@@ -31,8 +31,8 @@ import com.google.gson.JsonObject;
  * @author: cuizz
  * @versio: 1.0
  */
-@WebServlet("/maze")
-public class MazeServlet extends HttpServlet{
+@WebServlet("/mazeanswer")
+public class MazeAnswerServlet extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 	int map[][];
 	int seed;
@@ -43,7 +43,7 @@ public class MazeServlet extends HttpServlet{
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MazeServlet() {
+    public MazeAnswerServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -75,7 +75,7 @@ public class MazeServlet extends HttpServlet{
 		session.setAttribute("maze", s);
 		request.setAttribute("maze", s);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("project/mazeViewer.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("project/answerViewer.jsp");
 		rd.forward(request, response);
 		
 		out.close();
@@ -350,7 +350,7 @@ public class MazeServlet extends HttpServlet{
 		for(int i=0;i <= sizeheight+1;i++){
 			for(int j=0;j<=sizewidth+1;j++){
 				switch(map[j][i]){
-				case 9:
+				case 9:str+="▣"; break;
 				case 1:str+="　"; break;
 				case 3:
 				case 0:str+="▦"; break;

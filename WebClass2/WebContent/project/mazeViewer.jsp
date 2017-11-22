@@ -13,17 +13,12 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Home</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
   	<ul class="navbar-nav mr-auto">
 	<li class="nav-item" onmouseover="menu_over(this);"
-		onmouseout="menu_out(this)"><a class="nav-link" href="${contextPath}/session.do">메뉴 1 </a></li>
+		onmouseout="menu_out(this)"><a class="nav-link" href="project/mazeHome.jsp">Main</a></li>
 	<li class="nav-item" onmouseover="menu_over(this);"
-		onmouseout="menu_out(this)"><a class="nav-link" href="${contextPath}/list.do">메뉴 2</a></li>
+		onmouseout="menu_out(this)"><a class="nav-link" href="project/algorithm.jsp">알고리즘</a></li>
 	</ul>
     <%-- 세션에 사용자 정보가 없는 경우 --%>
   </div>
@@ -32,8 +27,6 @@
 
 <p id="viewer"><%= request.getAttribute("maze") %></p>
 
-<script>
-	
-</script>
+
 </body>
 </html>
