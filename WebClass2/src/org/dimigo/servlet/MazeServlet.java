@@ -15,11 +15,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.dimigo.vo.UserVO;
-
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-
 /**
  * <pre>
  * org.dimigo.servlet
