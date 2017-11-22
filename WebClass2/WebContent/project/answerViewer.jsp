@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<p id="viewer"><%= request.getAttribute("maze") %></p>
 </body>
 </html>
