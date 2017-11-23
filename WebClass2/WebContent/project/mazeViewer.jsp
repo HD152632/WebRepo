@@ -30,7 +30,7 @@
 
 <form id="signupForm" class="form-signin" method="post" action="${contextPath}/mazeanswer">
     <button class="btn btn-lg btn-primary btn-block" type="submit" >정답 확인</button>
-    <input name="seed" id="seed" value=<%=request.getAttribute("seed") %>></h5><h5 name="mazewidth" id="mazewidth"><%=request.getAttribute("sizewidth") %></h5><h5 name="mazeheight" id="mazeheight"><%=request.getAttribute("sizeheight") %></h5>
+    <input name="seed" id="seed" value=<%=request.getAttribute("seed") %>></input><input name="mazewidth" id="mazewidth" value="<%=request.getAttribute("sizewidth") %>" readonly></input><input name="mazeheight" id="mazeheight" value="<%=request.getAttribute("sizewidth") %>" readonly></input>
 </form>
 
 </body>
