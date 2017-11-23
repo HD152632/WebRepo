@@ -25,7 +25,7 @@
 </nav>
 
 
-<p id="viewer"><span style="line-height:0%"><%= request.getAttribute("maze") %></span></p>
+<p id="viewer"><span style="line-height:50%"><%= request.getAttribute("maze") %></span></p>
 
 
 <form id="signupForm" class="form-signin" method="post" action="${contextPath}/mazeanswer">
