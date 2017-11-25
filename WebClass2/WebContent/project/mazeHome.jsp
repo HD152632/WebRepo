@@ -24,8 +24,9 @@
     <%-- 세션에 사용자 정보가 없는 경우 --%>
   </div>
 </nav>
-	
+	<form>
 	<button onclick="randomNum()">랜덤 숫자 뽑기</button><p id="rseed"></p>
+	</form>
 	<form id="signupForm" class="form-signin" method="post" action="${contextPath}/maze">
     <label>시드: <input type="text" name="seed" id="seed" class="form-control" required></label><br>
 	<label>가로 크기 : <input type="text" name="mazewidth" id="mazewidth" class="form-control" required></label><br>
