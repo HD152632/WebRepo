@@ -20,6 +20,10 @@
     <%-- 세션에 사용자 정보가 없는 경우 --%>
   </div>
 </nav>
-	<img src="img1.png" style="width:180px"/> 우선 출발지에서 도착 지점까지 이어지는 길을 만듭니다.<br>ㅇㅇㅇ
+	<img src="img1.png" style="width:180px"/> 우선 출발지에서 도착 지점까지 이어지는 길을 만듭니다. 이 때, 길은 도착지점쪽으로 이동하는 경향이 있지만 도착지점과 반대방향으로 이동하기도 합니다.<br>
+	<img src="img2.png" style="width:180px"/> 한 점을 잡고, 그 점에서 원래 있던 길까지 이어지도록 길을 만듭니다. 이를 반복합니다.<br>
+	<img src="img3.png" style="width:180px"/> <img src="img4.png" style="width:180px"/> <img src="img5.png" style="width:180px"/> <br>
+	<img src="img6.png" style="width:180px"/> 그러면 이렇게 
+	
 </body>
 </html>
