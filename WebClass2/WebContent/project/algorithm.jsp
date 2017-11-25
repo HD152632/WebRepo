@@ -20,6 +20,6 @@
     <%-- 세션에 사용자 정보가 없는 경우 --%>
   </div>
 </nav>
-	<img src="img1.png" style="width:180px"/> <h3>우선 출발지에서 도착 지점까지 이어지는 길을 만듭니다. </h3><br>
+	<img src="img1.png" style="width:180px"/> 우선 출발지에서 도착 지점까지 이어지는 길을 만듭니다.<br>ㅇㅇㅇ
 </body>
 </html>
