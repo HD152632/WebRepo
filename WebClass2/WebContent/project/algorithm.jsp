@@ -20,6 +20,7 @@
     <%-- 세션에 사용자 정보가 없는 경우 --%>
   </div>
 </nav>
-	<img src="img1.png" style="width:180px"/> dfdfdsfds
+	<h3>※원활한 설명을 위해 설명용으로 표시 방법을 바꿨습니다.</h3>
+	<img src="img1.png" style="width:180px"/> 처음엔
 </body>
 </html>
