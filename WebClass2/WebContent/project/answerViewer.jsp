@@ -5,8 +5,22 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+<link rel="stylesheet" href="${contextPath}/css/signin.css">
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  	<ul class="navbar-nav mr-auto">
+	<li class="nav-item" onmouseover="menu_over(this);"
+		onmouseout="menu_out(this)"><a class="nav-link" href="project/mazeHome.jsp">Main</a></li>
+	<li class="nav-item" onmouseover="menu_over(this);"
+		onmouseout="menu_out(this)"><a class="nav-link" href="project/algorithm.jsp">알고리즘</a></li>
+	</ul>
+    <%-- 세션에 사용자 정보가 없는 경우 --%>
+  </div>
+</nav>
+
 <p id="viewer"><span style="line-height:85%"><%= request.getAttribute("maze") %></span></p>
 
 
