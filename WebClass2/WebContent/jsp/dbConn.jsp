@@ -13,13 +13,16 @@
 	Connection conn = null;
 	Statement stmt= null;
 	PreparedStatement pstmt = null;
+	ResultSet rs = null;
 	try {
 		String jdbcUrl= "jdbc:mysql://localhost:3306/webclass";
 		String userId= "root", userPwd= "root";
 		Class.forName("com.mysql.jdbc.Driver");
 		conn = DriverManager.getConnection(jdbcUrl, userId, userPwd);
 		stmt= conn.createStatement(); out.println("database successfully opened.");
-		pstmt = conn.prepareStatement("insert into user values(?,?,?,?)");
+		
+		String inputsql = "insert into user values(?,?,?,?)";
+		pstmt = conn.prepareStatement(inputsql);
 		pstmt.setString(1,"test");
 		pstmt.setString(2,"testpwd");
 		pstmt.setString(3,"testN");
@@ -27,6 +30,13 @@
 		pstmt.executeUpdate();
 		
 		out.println("member 테이블에 새로운 레코드를 추가했습니다.");
+		
+		String selectsql="select * from member";
+		pstmt = conn.prepareStatement(selectsql);
+		
+		rs = pstmt.executeQuery();%>
+		<p><%= rs.getString("id") %>
+<%
 	} catch(SQLException e) {out.println(e.getMessage());} 
 	finally {
 		if(pstmt!=null) pstmt.close();
