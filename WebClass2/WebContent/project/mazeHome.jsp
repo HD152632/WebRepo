@@ -40,7 +40,7 @@
 		
 		String inputsql = "insert into randmap values(?,?,?)";
 		pstmt = conn.prepareStatement(inputsql);
-		pstmt.setInt(1, 123456);
+		pstmt.setInt(1,123);
 		pstmt.setInt(2,50);
 		pstmt.setInt(3,50);
 		pstmt.executeUpdate();
