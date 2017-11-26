@@ -34,7 +34,7 @@
 	<%
 	try{
 		String selectsql="select * from randmap";
-		if(conn.prepareStatement(selectsql)!=null) pstmt=conn.prepareStatement(selectsql);
+		pstmt=conn.prepareStatement(selectsql);
 		
 		rs = pstmt.executeQuery();
 		
