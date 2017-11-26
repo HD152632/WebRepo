@@ -37,7 +37,8 @@
 		String selectsql="select * from user";
 		pstmt = conn.prepareStatement(selectsql);
 		
-		rs = pstmt.executeQuery();%>
+		rs = pstmt.executeQuery();
+		rs.next();%>
 		<p><%= rs.getString("id") %>
 <%
 	} catch(SQLException e) {out.println(e.getMessage());} 
