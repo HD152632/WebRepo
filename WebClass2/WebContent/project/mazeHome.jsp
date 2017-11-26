@@ -29,9 +29,7 @@
 	Connection conn = null;
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
-	%>
-	
-	<%
+
 	try{	
 		String jdbcUrl= "jdbc:mysql://localhost:3306/webclass";
 		String userId= "root", userPwd= "root";
@@ -79,24 +77,35 @@
 		function randomNum(){
 				var result = Math.floor(Math.random() * 100000000) + 1;	
 				document.getElementById("seed").value=result;
+				return;
 		}
 		
 		function dbEdit(){
-			try{
+				<%
 				Connection conn = null;
 				PreparedStatement pstmt = null;
+				ResultSet rs = null;
+
+				try{	
+					String jdbcUrl= "jdbc:mysql://localhost:3306/webclass";
+					String userId= "root", userPwd= "root";
+					Class.forName("com.mysql.jdbc.Driver");
+					conn = DriverManager.getConnection(jdbcUrl, userId, userPwd);
+					
+					String inputsql = "insert into randmap values(?,?,?)";
+					pstmt = conn.prepareStatement(inputsql);
+					pstmt.setInt(1,$('#seed').val());
+					pstmt.setInt(2,50);
+					pstmt.setInt(3,50);
+					pstmt.executeUpdate();
+					
+					pstmt = conn.prepareStatement("delete from randmap");
+					pstmt.executeUpdate();
+				}
+				catch(Exception e){}
+				%>
 				
-				pstmt = conn.prepareStatement("delete from randmap");
-				pstmt.executeUpdate();
-				
-				String inputsql = "insert into randmap values(?,?,?)";
-				pstmt = conn.prepareStatement(inputsql);
-				pstmt.setInt(1,document.getElementById("seed").value);
-				pstmt.setInt(2,document.getElementById("mazewidth").value);
-				pstmt.setInt(3,document.getElementById("mazeheight").value);
-				pstmt.executeUpdate();
-			}
-			catch(Exception e){}
+				return;
 		}
 	</script>
 	
