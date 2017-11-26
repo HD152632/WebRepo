@@ -33,7 +33,7 @@
 	
 	<%
 	try{
-		String selectsql="select * from randmap";
+		String selectsql="select * from user";
 		pstmt = conn.prepareStatement(selectsql);
 		
 		rs = pstmt.executeQuery();
