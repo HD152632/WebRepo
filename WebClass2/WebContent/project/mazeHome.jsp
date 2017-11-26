@@ -52,7 +52,7 @@
 		
 		rs.next();
 		
-	} catch(SQLException e) {out.println(e.getMessage());}
+	
 %>
   		<form>
 		<button onclick="randomNum()">랜덤 숫자 뽑기</button><p id="rseed"></p>
@@ -65,6 +65,7 @@
 	    <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="dbEdit()">미로 생성</button>
 	  	</form>
 <%
+	} catch(SQLException e) {out.println(e.getMessage());}
 	if(pstmt!=null) pstmt.close();
 	if(conn != null) conn.close();
 %>

@@ -34,7 +34,7 @@
 		
 		rs = pstmt.executeQuery();
 		rs.next();%>
-		<p><%= rs.getString("id") %>
+		<p><%= rs.getString("id") %></p>
 <%
 	pstmt = conn.prepareStatement("delete from user");
 	pstmt.executeUpdate();
