@@ -44,61 +44,26 @@
 		rs = pstmt.executeQuery();
 		
 	} catch(SQLException e) {out.println(e.getMessage());}
-	
-	if(rs.next()){
 %>
-
-	<form>
-	<button onclick="randomNum()">랜덤 숫자 뽑기</button><p id="rseed"></p>
-	</form>
-	<form id="signupForm" class="form-signin" method="post" action="${contextPath}/maze">
-    <label>시드: <input type="text" name="seed" id="seed" class="form-control" required value=<%=rs.getInt("seed") %>></label><br>
-	<label>가로 크기 : <input type="text" name="mazewidth" id="mazewidth" class="form-control" required value=<%=rs.getInt("width") %>></label><br>
-	<label>세로 크기 : <input type="text" name="mazeheight" id="mazeheight" class="form-control" required value=<%=rs.getInt("height") %>></label><br>
-    <button class="btn btn-lg btn-primary btn-block" type="submit" >미로 생성</button>
-  	</form>
-  	
-  	<%
-	}else{
-  	%>
   		<form>
 		<button onclick="randomNum()">랜덤 숫자 뽑기</button><p id="rseed"></p>
 		</form>
+		
 		<form id="signupForm" class="form-signin" method="post" action="${contextPath}/maze">
 	    <label>시드: <input type="text" name="seed" id="seed" class="form-control" required></label><br>
 		<label>가로 크기 : <input type="text" name="mazewidth" id="mazewidth" class="form-control" required></label><br>
 		<label>세로 크기 : <input type="text" name="mazeheight" id="mazeheight" class="form-control" required></label><br>
 	    <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="dbEdit()">미로 생성</button>
 	  	</form>
-  	<% }
+<%
 	if(pstmt!=null) pstmt.close();
 	if(conn != null) conn.close();
-	%>
+%>
 	
 	<script type="text/javascript">
 		function randomNum(){
 				var result = Math.floor(Math.random() * 100000000) + 1;	
 				document.getElementById("rseed").innerHTML=result;
-		}
-		
-		function dbEdit(){
-			Connection conn = null;
-			PreparedStatement pstmt = null;
-			
-			String jdbcUrl= "jdbc:mysql://localhost:3306/webclass";
-			String userId= "root", userPwd= "root";
-			Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection(jdbcUrl, userId, userPwd);
-			
-			pstmt = conn.prepareStatement("delete from randmap");
-			pstmt.executeUpdate();
-			
-			String inputsql = "insert into randmap values(?,?,?)";
-			pstmt = conn.prepareStatement(inputsql);
-			pstmt.setInt(1,Integer.parseInt(document.getElementById("seed").value));
-			pstmt.setInt(2,Integer.parseInt(document.getElementById("width").value));
-			pstmt.setInt(3,Integer.parseInt(document.getElementById("height").value));
-			pstmt.executeUpdate();
 		}
 	</script>
 	
