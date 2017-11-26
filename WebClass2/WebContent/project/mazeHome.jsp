@@ -32,7 +32,12 @@
 	%>
 	
 	<%
-	try{
+	try{	
+		String jdbcUrl= "jdbc:mysql://localhost:3306/webclass";
+		String userId= "root", userPwd= "root";
+		Class.forName("com.mysql.jdbc.Driver");
+		conn = DriverManager.getConnection(jdbcUrl, userId, userPwd);
+		
 		String selectsql="select * from randmap";
 		pstmt=conn.prepareStatement(selectsql);
 		
