@@ -24,10 +24,12 @@
 		pstmt.setString(2,"testpwd");
 		pstmt.setString(3,"testN");
 		pstmt.setString(4,"testNN");
+		pstmt.executeUpdate();
 		
 		out.println("member 테이블에 새로운 레코드를 추가했습니다.");
 	} catch(SQLException e) {out.println(e.getMessage());} 
 	finally {
+		if(pstmt!=null)pstmtt.close();
 		if(stmt!= null) stmt.close();
 		if(conn != null) conn.close();
 	}
