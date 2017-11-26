@@ -21,9 +21,6 @@
 		conn = DriverManager.getConnection(jdbcUrl, userId, userPwd);
 		stmt= conn.createStatement(); out.println("database successfully opened.");
 		
-		pstmt = conn.prepareStatement("delete from user");
-		pstmt.executeUpdate();
-		
 		String selectsql="select * from user";
 		pstmt = conn.prepareStatement(selectsql);
 		
@@ -31,7 +28,8 @@
 		rs.next();%>
 		<p><%= rs.getString("id") %>
 <%
-	
+	pstmt = conn.prepareStatement("delete from user");
+	pstmt.executeUpdate();
 	
 	String inputsql = "insert into user values(?,?,?,?)";
 	pstmt = conn.prepareStatement(inputsql);
