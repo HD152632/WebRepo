@@ -18,7 +18,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
   	<ul class="navbar-nav mr-auto">
 	<li class="nav-item" onmouseover="menu_over(this);"
-		onmouseout="menu_out(this)"><a class="nav-link" href="mazeHome.jsp">Main</a></li>
+		onmouseout="menu_out(this)"><a class="nav-link" href="project/mazeHome.jsp">Main</a></li>
 	<li class="nav-item" onmouseover="menu_over(this);"
 		onmouseout="menu_out(this)"><a class="nav-link" href="algorithm.jsp">알고리즘</a></li>
 	</ul>
