@@ -40,7 +40,7 @@
 		
 		String inputsql = "insert into randmap values(?,?,?)";
 		pstmt = conn.prepareStatement(inputsql);
-		pstmt.setInt(1,Integer.parseInt(String.valueOf(Math.floor(Math.random() * 100000000)))+1);
+		pstmt.setInt(1,Integer.parseInt(String.valueOf(Math.floor(Math.random() * 1000000)))+1);
 		pstmt.setInt(2,50);
 		pstmt.setInt(3,50);
 		pstmt.executeUpdate();
@@ -69,7 +69,7 @@
 	
 	<script type="text/javascript">
 		function randomNum(){
-				var result = Math.floor(Math.random() * 100000000) + 1;	
+				var result = Math.floor(Math.random() * 1000000) + 1;	
 				document.getElementById("seed").value=result;
 		}
 	</script>
