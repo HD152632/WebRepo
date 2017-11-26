@@ -33,8 +33,8 @@
 	
 	<%
 	try{
-		String selectsql="select * from user";
-		pstmt = conn.prepareStatement(selectsql);
+		String selectsql="select * from randmap";
+		if(conn.prepareStatement(selectsql)!=null) pstmt=conn.prepareStatement(selectsql);
 		
 		rs = pstmt.executeQuery();
 		
