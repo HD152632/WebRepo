@@ -57,7 +57,7 @@
 		rs.next();
 %>
 		<button onclick="randomNum()">랜덤 숫자 뽑기</button><p id="rseed">
-		<form id="signupForm" class="form-signin" method="post" action="${contextPath}/maze" onsubmit="return dbEdit();">
+		<form id="signupForm" class="form-signin" method="post" action="${contextPath}/maze">
 	    <label>시드: <input type="text" name="seed" id="seed" class="form-control" value=<%=String.valueOf(rs.getInt("seed")) %> required></label><br>
 		<label>가로 크기 : <input type="text" name="mazewidth" id="mazewidth" class="form-control" value=<%=String.valueOf(rs.getInt("width")) %> required></label><br>
 		<label>세로 크기 : <input type="text" name="mazeheight" id="mazeheight" class="form-control" value=<%=String.valueOf(rs.getInt("height")) %> required></label><br>
@@ -77,34 +77,6 @@
 		function randomNum(){
 				var result = Math.floor(Math.random() * 100000000) + 1;	
 				document.getElementById("seed").value=result;
-				return;
-		}
-		
-		function dbEdit(){
-				<%
-				Connection conn = null;
-				PreparedStatement pstmt = null;
-				ResultSet rs = null;
-
-				try{	
-					String jdbcUrl= "jdbc:mysql://localhost:3306/webclass";
-					String userId= "root", userPwd= "root";
-					Class.forName("com.mysql.jdbc.Driver");
-					conn = DriverManager.getConnection(jdbcUrl, userId, userPwd);
-					
-					String inputsql = "insert into randmap values(?,?,?)";
-					pstmt = conn.prepareStatement(inputsql);
-					pstmt.setInt(1,$('#seed').val());
-					pstmt.setInt(2,50);
-					pstmt.setInt(3,50);
-					pstmt.executeUpdate();
-					
-					pstmt = conn.prepareStatement("delete from randmap");
-					pstmt.executeUpdate();
-				}
-				catch(Exception e){}
-				%>
-				
 				return;
 		}
 	</script>
