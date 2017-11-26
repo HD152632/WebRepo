@@ -74,7 +74,7 @@
 %>
 	
 	<script type="text/javascript">
-		function randomNum(){
+		function randomNum(){ //'seed'의 값을 랜덤하게 변경함.
 				var result = Math.floor(Math.random() * 100000000) + 1;	
 				document.getElementById("seed").value=result;
 				return;

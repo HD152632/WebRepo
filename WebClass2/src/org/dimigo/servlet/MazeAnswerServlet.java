@@ -329,7 +329,7 @@ public class MazeAnswerServlet extends HttpServlet{
 	    //printf("\n");
 	}
 
-	String buildMaze(){
+	String buildMaze(){ //미로를 만드는 부분.
 		String str;
 		
 		map=new int[sizewidth+2][sizeheight+2];
@@ -348,10 +348,10 @@ public class MazeAnswerServlet extends HttpServlet{
 		for(int i=0;i <= sizeheight+1;i++){
 			for(int j=0;j<=sizewidth+1;j++){
 				switch(map[j][i]){
-				case 9:str+="▣"; break;
+				case 9:str+="▣"; break; //정답을 보여줘야 하므로 정답을 그냥 길과 구분함.
 				case 1:str+="　"; break;
 				case 3:
-				case 0:str+="▦"; break;
+				case 0:str+="▦"; break; 
 				case 7:str+="★"; break;
 				case 8:str+="☆"; break;
 				}

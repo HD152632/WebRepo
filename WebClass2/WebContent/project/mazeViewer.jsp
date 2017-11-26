@@ -24,7 +24,7 @@
   </div>
 </nav>
 
-<p id="viewer"><span style="line-height:85%"><%= request.getAttribute("maze") %></span></p>
+<p id="viewer"><span style="line-height:85%"><%= request.getAttribute("maze") %></span></p> <%-- 미로를 받아와서 이를 출력함 --%>
 
 
 <form id="signupForm" class="form-signin" method="post" action="${contextPath}/mazeanswer">
