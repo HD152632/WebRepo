@@ -38,6 +38,13 @@
 		Class.forName("com.mysql.jdbc.Driver");
 		conn = DriverManager.getConnection(jdbcUrl, userId, userPwd);
 		
+		String inputsql = "insert into randmap values(?,?,?)";
+		pstmt = conn.prepareStatement(inputsql);
+		pstmt.setInt(1, Integer.parseInt(String.valueOf(Math.round(Math.random()*100000000))) + 1);
+		pstmt.setInt(2,50);
+		pstmt.setInt(3,50);
+		pstmt.executeUpdate();
+		
 		String selectsql="select * from randmap";
 		pstmt=conn.prepareStatement(selectsql);
 		
