@@ -82,15 +82,21 @@
 		}
 		
 		function dbEdit(){
-			Connection conn = null;
-			PreparedStatement pstmt = null;
-			
-			String inputsql = "insert into randmap values(?,?,?)";
-			pstmt = conn.prepareStatement(inputsql);
-			pstmt.setInt(1,document.getElementById("seed").value);
-			pstmt.setInt(2,document.getElementById("mazewidth").value);
-			pstmt.setInt(3,document.getElementById("mazeheight").value);
-			pstmt.executeUpdate();
+			try{
+				Connection conn = null;
+				PreparedStatement pstmt = null;
+				
+				pstmt = conn.prepareStatement("delete from randmap");
+				pstmt.executeUpdate();
+				
+				String inputsql = "insert into randmap values(?,?,?)";
+				pstmt = conn.prepareStatement(inputsql);
+				pstmt.setInt(1,document.getElementById("seed").value);
+				pstmt.setInt(2,document.getElementById("mazewidth").value);
+				pstmt.setInt(3,document.getElementById("mazeheight").value);
+				pstmt.executeUpdate();
+			}
+			catch(Exception e){}
 		}
 	</script>
 	
