@@ -62,6 +62,8 @@
 	  	
 	  	
 <%
+	pstmt = conn.prepareStatement("delete from randmap");
+	pstmt.executeUpdate();
 	} catch(SQLException e) {out.println(e.getMessage());}
 	if(pstmt!=null) pstmt.close();
 	if(conn != null) conn.close();
