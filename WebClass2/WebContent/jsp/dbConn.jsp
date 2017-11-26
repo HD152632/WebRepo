@@ -12,12 +12,20 @@
 <%
 	Connection conn = null;
 	Statement stmt= null;
+	PreparedStatement pstmt = null;
 	try {
 		String jdbcUrl= "jdbc:mysql://localhost:3306/webclass";
 		String userId= "root", userPwd= "root";
 		Class.forName("com.mysql.jdbc.Driver");
 		conn = DriverManager.getConnection(jdbcUrl, userId, userPwd);
 		stmt= conn.createStatement(); out.println("database successfully opened.");
+		pstmt = conn.prepareStatement("insert into user values(?,?,?,?)");
+		pstmt.setString(1,"test");
+		pstmt.setString(2,"testpwd");
+		pstmt.setString(3,"testN");
+		pstmt.setString(4,"testNN");
+		
+		out.println("member 테이블에 새로운 레코드를 추가했습니다.");
 	} catch(SQLException e) {out.println(e.getMessage());} 
 	finally {
 		if(stmt!= null) stmt.close();
