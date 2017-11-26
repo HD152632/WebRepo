@@ -96,8 +96,8 @@
 			String inputsql = "insert into randmap values(?,?,?)";
 			pstmt = conn.prepareStatement(inputsql);
 			pstmt.setInt(1,Integer.parseInt(document.getElementById("seed").value));
-			pstmt.setInt(2,Integer.parseInt(document.getElementById("width").value);
-			pstmt.setInt(3,Integer.parseInt(document.getElementById("height").value);
+			pstmt.setInt(2,Integer.parseInt(document.getElementById("width").value));
+			pstmt.setInt(3,Integer.parseInt(document.getElementById("height").value));
 			pstmt.executeUpdate();
 		}
 	</script>
