@@ -40,7 +40,7 @@
 		
 		String inputsql = "insert into randmap values(?,?,?)";
 		pstmt = conn.prepareStatement(inputsql);
-		pstmt.setInt(1,Integer.parseInt(String.valueOf(Math.random() * 100000000))+1);
+		pstmt.setInt(1,Integer.parseInt(String.valueOf(Math.floor(Math.random() * 100000000)))+1);
 		pstmt.setInt(2,50);
 		pstmt.setInt(3,50);
 		pstmt.executeUpdate();
@@ -52,7 +52,7 @@
 		
 		rs.next();
 %>
-		<button onclick="randomNum()">랜덤 숫자 뽑기</button>
+		<button onclick="randomNum()">랜덤 숫자 뽑기</button><p id="rseed">
 		<form id="signupForm" class="form-signin" method="post" action="${contextPath}/maze">
 	    <label>시드: <input type="text" name="seed" id="seed" class="form-control" value=<%=String.valueOf(rs.getInt("seed")) %> required></label><br>
 		<label>가로 크기 : <input type="text" name="mazewidth" id="mazewidth" class="form-control" value=<%=String.valueOf(rs.getInt("width")) %> required></label><br>
