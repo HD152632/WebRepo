@@ -24,16 +24,6 @@
 		pstmt = conn.prepareStatement("delete from user");
 		pstmt.executeUpdate();
 		
-		String inputsql = "insert into user values(?,?,?,?)";
-		pstmt = conn.prepareStatement(inputsql);
-		pstmt.setString(1,"test");
-		pstmt.setString(2,"testpwd");
-		pstmt.setString(3,"testN");
-		pstmt.setString(4,"testNN");
-		pstmt.executeUpdate();
-		
-		out.println("member 테이블에 새로운 레코드를 추가했습니다.");
-		
 		String selectsql="select * from user";
 		pstmt = conn.prepareStatement(selectsql);
 		
@@ -41,6 +31,18 @@
 		rs.next();%>
 		<p><%= rs.getString("id") %>
 <%
+	
+	
+	String inputsql = "insert into user values(?,?,?,?)";
+	pstmt = conn.prepareStatement(inputsql);
+	pstmt.setString(1,"test");
+	pstmt.setString(2,"testpwd");
+	pstmt.setString(3,"testN");
+	pstmt.setString(4,"testNN");
+	pstmt.executeUpdate();
+	
+	out.println("member 테이블에 새로운 레코드를 추가했습니다.");
+
 	} catch(SQLException e) {out.println(e.getMessage());} 
 	finally {
 		if(pstmt!=null) pstmt.close();
