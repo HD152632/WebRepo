@@ -28,6 +28,7 @@
 		pstmt.setString(3,"testN");
 		pstmt.setString(4,"testNN");
 		pstmt.executeUpdate();
+		out.println("member 테이블에 새로운 레코드를 추가했습니다.");
 		
 		String selectsql="select * from user";
 		pstmt = conn.prepareStatement(selectsql);
@@ -41,7 +42,7 @@
 	
 	
 	
-	out.println("member 테이블에 새로운 레코드를 추가했습니다.");
+	
 
 	} catch(SQLException e) {out.println(e.getMessage());} 
 	finally {
