@@ -38,14 +38,20 @@
 		Class.forName("com.mysql.jdbc.Driver");
 		conn = DriverManager.getConnection(jdbcUrl, userId, userPwd);
 		
-		String inputsql = "insert into randmap values(?,?,?)";
-		pstmt = conn.prepareStatement(inputsql);
-		pstmt.setInt(1,(int)(Math.floor(Math.random() * 100000000)+1));
-		pstmt.setInt(2,50);
-		pstmt.setInt(3,50);
-		pstmt.executeUpdate();
-		
 		String selectsql="select * from randmap";
+		pstmt=conn.prepareStatement(selectsql);
+		
+		rs = pstmt.executeQuery();
+		if(!rs.next()){
+			String inputsql = "insert into randmap values(?,?,?)";
+			pstmt = conn.prepareStatement(inputsql);
+			pstmt.setInt(1,(int)(Math.floor(Math.random() * 100000000)+1));
+			pstmt.setInt(2,50);
+			pstmt.setInt(3,50);
+			pstmt.executeUpdate();
+		}
+		
+		selectsql="select * from randmap";
 		pstmt=conn.prepareStatement(selectsql);
 		
 		rs = pstmt.executeQuery();
@@ -73,6 +79,15 @@
 		function randomNum(){
 				var result = Math.floor(Math.random() * 100000000) + 1;	
 				document.getElementById("seed").value=result;
+		}
+		
+		function dbEdit(){
+			String inputsql = "insert into randmap values(?,?,?)";
+			pstmt = conn.prepareStatement(inputsql);
+			pstmt.setInt(1,document.getElementById("seed").value);
+			pstmt.setInt(2,document.getElementById("mazewidth").value);
+			pstmt.setInt(3,document.getElementById("mazeheight").value);
+			pstmt.executeUpdate();
 		}
 	</script>
 	
