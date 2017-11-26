@@ -82,6 +82,9 @@
 		}
 		
 		function dbEdit(){
+			Connection conn = null;
+			PreparedStatement pstmt = null;
+			
 			String inputsql = "insert into randmap values(?,?,?)";
 			pstmt = conn.prepareStatement(inputsql);
 			pstmt.setInt(1,document.getElementById("seed").value);
