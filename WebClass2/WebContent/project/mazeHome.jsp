@@ -52,7 +52,7 @@
 		
 	} catch(SQLException e) {out.println(e.getMessage());}
 %>
-  		<form>
+  		<form onsubmit='false'>
 		<button onclick="randomNum()">랜덤 숫자 뽑기</button><p id="rseed"></p>
 		</form>
 		
