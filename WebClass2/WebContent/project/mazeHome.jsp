@@ -43,7 +43,6 @@
 		
 		rs = pstmt.executeQuery();
 		
-		
 	} catch(SQLException e) {out.println(e.getMessage());}
 	
 	if(rs.next()){
