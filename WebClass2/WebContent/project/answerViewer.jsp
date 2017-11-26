@@ -26,8 +26,8 @@
 <p id="viewer"><span style="line-height:85%"><%= request.getAttribute("maze") %></span></p>
 
 
-<form id="signupForm" class="form-signin" method="post" action="${contextPath}/mazeanswer">
-    <button class="btn btn-lg btn-primary btn-block" type="submit" >정답 확인</button>
+<form id="signupForm" class="form-signin" method="post" action="${contextPath}/maze">
+    <button class="btn btn-lg btn-primary btn-block" type="submit" >문제로 돌아가기</button>
      시드:<input name="seed" id="seed" value=<%=request.getAttribute("seed") %> readonly></input>가로 크기:<input name="mazewidth" id="mazewidth" value="<%=request.getAttribute("sizewidth") %>" readonly></input>세로 크기:<input name="mazeheight" id="mazeheight" value="<%=request.getAttribute("sizewidth") %>" readonly></input>
 </form>
 </body>
