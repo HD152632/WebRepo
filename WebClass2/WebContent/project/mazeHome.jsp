@@ -59,7 +59,7 @@
 		rs.next();
 %>
 		<button onclick="randomNum()">랜덤 숫자 뽑기</button><p id="rseed">
-		<form id="signupForm" class="form-signin" method="post" action="${contextPath}/maze" onsubmit="return dbEdit();">
+		<form id="signupForm" class="form-signin" method="post" action="${contextPath}/maze">
 	    <label>시드: <input type="text" name="seed" id="seed" class="form-control" value=<%=String.valueOf(rs.getInt("seed")) %> required></label><br>
 		<label>가로 크기 : <input type="text" name="mazewidth" id="mazewidth" class="form-control" value=<%=String.valueOf(rs.getInt("width")) %> required></label><br>
 		<label>세로 크기 : <input type="text" name="mazeheight" id="mazeheight" class="form-control" value=<%=String.valueOf(rs.getInt("height")) %> required></label><br>
